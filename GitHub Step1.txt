@@ -1,0 +1,8 @@
+setTool("line");
+makeLine(14, 123, 901, 123);
+setForegroundColor(0, 0, 0);
+makeLine(11, 150, 904, 150);
+
+run("Analyze... ", "save=[[INSERT DIRECTORY]/Stack_AS--ALL.img]");
+run("Close All");
+
