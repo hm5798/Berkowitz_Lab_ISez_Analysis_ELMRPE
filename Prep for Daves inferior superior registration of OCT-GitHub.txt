@@ -1,0 +1,15 @@
+run("Images to Stack")
+run("Flip Vertically", "stack");
+
+run("8-bit");
+makeRectangle(0, 126, 1000, 500);
+run("Colors...", "foreground=black background=black selection=yellow");
+
+setTool("rectangle");
+waitForUser( "Pause","Position ROI around retina");
+run("Crop"); 
+
+run("Analyze... ", "save=["INSERT DIRECTORY"/forregStack.img]");
+
+run("Close All Without Saving");
+

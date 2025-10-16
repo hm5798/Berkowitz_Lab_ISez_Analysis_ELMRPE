@@ -1,0 +1,48 @@
+run("8-bit");
+run("Gel Analyzer Options...", "vertical=1 horizontal=5 uncalibrated");
+
+run("Duplicate...", " ");
+run("Images to Stack");
+
+run("Analyze... ", "save=[INSERT DIRECTORY]/Stack.img");
+run("Delete Slice");
+run("8-bit");
+run("Set Scale...", "distance=0");
+run("Max...", "value=230");
+setTool("polyline");
+run("Color Picker...");
+run("Line Width...", "line=1");
+//run("Despeckle");
+
+setForegroundColor(255, 255, 255);
+waitForUser( "Pause","Draw RPE");
+run("Fill", "slice");
+
+setForegroundColor(254, 254, 254);
+run("Line Width...", "line=5");
+waitForUser( "Pause","Draw ELM")
+run("Fill", "slice");
+
+setForegroundColor(253, 253, 253);
+run("Line Width...", "line=1");
+waitForUser( "Pause","Draw ONL-OPL border");
+run("Fill", "slice");
+
+setForegroundColor(252, 252, 252);
+waitForUser( "Pause","Draw INL-IPL border");
+run("Fill", "slice");
+
+setForegroundColor(250, 250, 250);
+waitForUser( "Pause","Draw GCL-RNFL border");
+run("Fill", "slice");
+
+setForegroundColor(249, 249, 249);
+waitForUser( "Pause","Draw RNFL-vitreous border");
+run("Fill", "slice");
+
+setForegroundColor(243, 243, 243);
+waitForUser( "Pause","Place vertical line at optic nerve around 500 +/- 20");
+run("Fill", "slice");
+
+saveAs("Text Image", "[INSERT DIRECTORY]/Stack.txt");
+close();
